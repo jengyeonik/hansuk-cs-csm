@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)한석시스템 AS센터 - 최선문 차장</title>
+    
+    <!-- 카카오톡 / 문자 미리보기 설정 (오픈 그래프) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="(주)한석시스템 AS센터 - 최선문 차장">
+    <meta property="og:description" content="신속 · 정확 · 친절한 AS 서비스 | 연락처">
+    <meta property="og:image" content="https://jengyeonik.github.io/hansuk-as-card/og-image.png">
+
+    <!-- 폰트어썸 아이콘 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 명함 전체 디자인 CSS 스타일 -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            padding: 24px 20px;
+        }
+
+        /* 헤더 / 프로필 (로고 제거 후 깔끔하게 정돈) */
+        .header {
+            text-align: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: #333;
+            letter-spacing: -0.5px;
+        }
+
+        .badge-as {
+            display: inline-block;
+            background-color: #004d40;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 6px 0 12px 0;
+        }
+
+        .profile-name {
+            font-size: 21px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .profile-name span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .slogan {
+            font-size: 12px;
+            color: #00695c;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        /* 핵심 액션 버튼 (3열) */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .btn-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 6px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s ease;
+        }
+
+        .btn-card i {
+            font-size: 18px;
+            color: #004d40;
+            margin-bottom: 6px;
+        }
+
+        .btn-card .title {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-card .sub {
+            font-size: 10px;
+            color: #777;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        /* 연락처 저장 전용 카드 */
+        .contact-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+        }
+
+        .btn-save-contact {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #004d40;
+            color: #fff;
+            padding: 10px 0;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* AS 접수 안내 */
+        .notice-section {
+            background-color: #fffbe6;
+            border: 1px solid #ffe58f;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+
+        .notice-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #d48806;
+            margin-bottom: 10px;
+        }
+
+        .notice-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+            align-items: flex-start;
+        }
+
+        .notice-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .notice-icon {
+            background: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #d48806;
+            flex-shrink: 0;
+        }
+
+        .notice-content .head {
+            font-size: 12px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .notice-content .desc {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        /* 하단 상세 정보 목록 */
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 14px;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .info-row i {
+            width: 20px;
+            color: #004d40;
+        }
+
+        .info-label {
+            width: 65px;
+            color: #777;
+            font-weight: 600;
+        }
+
+        .info-value {
+            color: #333;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .info-value a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* 담당자 강조 스타일 */
+        .manager-tag {
+            font-size: 11px;
+            color: #00695c;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        /* 푸터 */
+        .footer {
+            text-align: center;
+            padding-top: 6px;
+            color: #888;
+        }
+
+        .slogan-ft {
+            font-size: 12px;
+            color: #004d40;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .copy {
+            font-size: 10px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 헤더 / 프로필 -->
+    <div class="header">
+        <div class="company-name">(주) 한석시스템</div>
+        <div><span class="badge-as">AS CENTER</span></div>
+        <div class="profile-name">최 선 문 <span>| AS팀 차장</span></div>
+        <div class="slogan">신속 · 정확 · 친절한 AS 서비스</div>
+    </div>
+
+    <!-- 핵심 액션 버튼 (3열) -->
+    <div class="action-buttons">
+        <a href="tel:010-7367-0300" class="btn-card">
+            <i class="fa-solid fa-phone"></i>
+            <span class="title">전화하기</span>
+            <span class="sub">010-7367-0300</span>
+        </a>
+        <a href="mailto:hansuk_cs@naver.com" class="btn-card">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="title">이메일 보내기</span>
+            <span class="sub">hansuk_cs@...</span>
+        </a>
+        <a href="http://www.hansuksystem.co.kr" target="_blank" class="btn-card">
+            <i class="fa-solid fa-globe"></i>
+            <span class="title">홈페이지</span>
+            <span class="sub">hansuksystem...</span>
+        </a>
+    </div>
+
+    <!-- 연락처 저장 전용 버튼 -->
+    <div class="contact-card">
+        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%EC%A1%B0%EC%84%B1%EA%B2%BD%0AFN%3A%EC%A1%B0%EC%84%B1%EA%B2%BD%20%EC%A3%BC%EC%9E%84%0AORG%3A(%EC%A3%BC)%ED%95%9C%EC%84%9D%EC%8B%9C%EC%8A%A4%ED%85%9C%0ATITLE%3AAS%ED%8C%80%20%EC%A3%BC%EC%9E%84%0ATEL%3BTYPE%3DWORK%2CVOICE%3A031-322-2981%0ATEL%3BTYPE%3DFAX%3A031-322-2989%0AEMAIL%3Ahansuk_cs%40naver.com%0AURL%3Ahttp%3A%2F%2Fwww.hansuksystem.co.kr%0AADR%3BTYPE%3DWORK%3A%3B%3B%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%B2%98%EC%9D%B8%EA%B5%AC%20%EB%B0%B1%EC%95%94%EB%A9%B4%20%EA%B3%A0%EC%95%88%EB%A1%9C51%EB%B2%88%EA%B8%B8%2034%0AEND%3AVCARD" download="조성경_한석시스템.vcf" class="btn-save-contact">
+            <i class="fa-solid fa-user-plus"></i> 휴대폰에 연락처 저장하기
+        </a>
+    </div>
+
+    <!-- AS 접수 안내 -->
+    <div class="notice-section">
+        <div class="notice-title">
+            <i class="fa-regular fa-clipboard"></i>
+            <span>AS 접수 안내</span>
+        </div>
+        <div class="notice-item">
+            <div class="notice-icon"><i class="fa-solid fa-print"></i></div>
+            <div class="notice-content">
+                <div class="head">팩스 · 이메일 접수</div>
+                <div class="desc">접수대장에 기록 후 접수 순서에 따라 처리됩니다.</div>
+            </div>
+        </div>
+        <div class="notice-item">
+            <div class="notice-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div class="notice-content">
+                <div class="head">리스트 전송 시</div>
+                <div class="desc">현장명 및 연락처(CS 또는 담당자)를 반드시 기재해 주세요.</div>
+            </div>
+        </div>
+        <div class="notice-item">
+            <div class="notice-icon" style="background:#fff3e0; color:#e65100;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="notice-content">
+                <div class="head" style="color:#e65100;">안내</div>
+                <div class="desc">현장명 및 연락처 미기재 시 접수 및 처리가 불가합니다.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 명함 상세 정보 -->
+    <div class="info-list">
+        <div class="info-row">
+            <i class="fa-solid fa-phone"></i>
+            <span class="info-label">대표번호</span>
+            <span class="info-value">
+                <a href="tel:031-322-2981">031-322-2981</a>
+                <span class="manager-tag">[ 담당 조성경 주임 ]</span>
+            </span>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-fax"></i>
+            <span class="info-label">팩스</span>
+            <span class="info-value">031-322-2989</span>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="info-label">이메일</span>
+            <span class="info-value"><a href="mailto:hansuk_cs@naver.com">hansuk_cs@naver.com</a></span>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="info-label">주소</span>
+            <span class="info-value">경기도 용인시 처인구 백암면 고안로51번길 34</span>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-globe"></i>
+            <span class="info-label">홈페이지</span>
+            <span class="info-value"><a href="http://www.hansuksystem.co.kr" target="_blank">www.hansuksystem.co.kr</a></span>
+        </div>
+    </div>
+
+    <!-- 하단 브랜드 푸터 -->
+    <div class="footer">
+        <div style="font-size:10px; opacity: 0.8; margin-bottom:4px;">SINCE 2007</div>
+        <div style="font-size:15px; font-weight:800; margin-bottom:4px;">(주)한석시스템</div>
+        <div class="slogan-ft">신속 · 정확 · 친절</div>
+        <div class="copy">Copyright © HANSUKSYSTEM. All Rights Reserved.</div>
+    </div>
+</div>
+
+</body>
+</html>
